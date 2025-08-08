@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Life Expectancy Clustering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Life Expectancy Clustering App</h1>
+        <p class="description">Explore clustering results using DBSCAN based on gender-wise life expectancy data.</p>
+        
+        <form action="/predict" method="post">
+            <label for="female">Sum of Female Life Expectancy:</label>
+            <input type="number" step="0.01" name="female" required>
+
+            <label for="both">Sum of Life Expectancy (Both Sexes):</label>
+            <input type="number" step="0.01" name="both" required>
+
+            <label for="male">Sum of Male Life Expectancy:</label>
+            <input type="number" step="0.01" name="male" required>
+
+            <button type="submit">Predict Cluster</button>
+        </form>
+
+        {% if result is not none %}
+            <div class="result">
+                <h2>🧠 Predicted Cluster: {{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
