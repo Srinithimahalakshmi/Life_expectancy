@@ -102,5 +102,4 @@ To contribute:
 ⭐ *If you find this project insightful, feel free to give it a star!*
 
 
-::contentReference[oaicite:0]{index=0}
 ```
